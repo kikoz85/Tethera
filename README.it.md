@@ -43,7 +43,7 @@
   - [9. Connessioni cifrate: tunnel SSH](#9-connessioni-cifrate-tunnel-ssh)
   - [10. Sincronizzazione tra iPhone, iPad e Mac](#10-sincronizzazione-tra-iphone-ipad-e-mac)
   - [11. Wake-on-LAN e computer nelle vicinanze](#11-wake-on-lan-e-computer-nelle-vicinanze)
-  - [12. Home, Mesh Map e Performance](#12-home-mesh-map-e-performance)
+  - [12. Home, Rete e Performance](#12-home-rete-e-performance)
   - [13. Siri, Comandi Rapidi, widget e Handoff](#13-siri-comandi-rapidi-widget-e-handoff)
   - [14. Impostazioni](#14-impostazioni)
   - [15. Sul Mac](#15-sul-mac)
@@ -77,8 +77,8 @@
 |---|---|
 | ![Finestra della sessione su Mac](screenshots/mac-session-it.jpg) | ![Server](screenshots/mac-servers-it.jpg) |
 | Una sessione nella sua finestra | Server per gruppo, preferiti e computer nelle vicinanze |
-| ![Mesh Map](screenshots/mac-mesh-it.jpg) | ![Performance](screenshots/mac-performance-it.jpg) |
-| Mesh Map: quali computer sono online, attivi e cifrati | Performance: fotogrammi, flusso dati, latenza |
+| ![Rete](screenshots/mac-network-it.jpg) | ![Performance](screenshots/mac-performance-it.jpg) |
+| Rete: quali computer sono online, attivi e cifrati | Performance: fotogrammi, flusso dati, latenza |
 | ![Home su iPad](screenshots/ipad-connect-en.jpg) | ![Sessione su iPad](screenshots/ipad-session-en.jpg) |
 | iPad: home con le anteprime dal vivo | iPad: sessione con la Macro Bar |
 | ![Server su iPad](screenshots/ipad-servers-en.jpg) | ![Impostazioni](screenshots/mac-settings-it.jpg) |
@@ -89,7 +89,7 @@
   &nbsp;
   <img src="screenshots/iphone-session-it.jpg" width="200" alt="Sessione su iPhone">
   &nbsp;
-  <img src="screenshots/iphone-mesh-it.jpg" width="200" alt="Mesh Map su iPhone">
+  <img src="screenshots/iphone-network-it.jpg" width="200" alt="Rete su iPhone">
 </p>
 <p align="center">
   <img src="screenshots/iphone-session-landscape-it.jpg" width="620" alt="iPhone in orizzontale">
@@ -235,11 +235,11 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 
 **Nearby** in Servers elenca i computer della tua rete che annunciano la Condivisione schermo o il VNC (Bonjour).
 
-### 12. Home, Mesh Map e Performance
+### 12. Home, Rete e Performance
 
 - **Connect** (home): una card per ogni server con l'anteprima del suo schermo, lo stato e, durante la
   connessione, la banda.
-- **Mesh Map**: il tuo dispositivo al centro e i computer intorno, colorati secondo lo stato, con un lucchetto
+- **Rete**: il tuo dispositivo al centro e i computer intorno, colorati secondo lo stato, con un lucchetto
   sulle sessioni cifrate.
 - **Performance**: per ogni sessione aperta, fotogrammi al secondo, flusso dati, aggiornamenti dello schermo,
   latenza e tempo della GPU.

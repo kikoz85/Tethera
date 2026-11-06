@@ -43,7 +43,7 @@
   - [9. Encrypted connections: SSH tunnel](#9-encrypted-connections-ssh-tunnel)
   - [10. Sync between iPhone, iPad and Mac](#10-sync-between-iphone-ipad-and-mac)
   - [11. Wake-on-LAN and nearby computers](#11-wake-on-lan-and-nearby-computers)
-  - [12. Home, Mesh Map and Performance](#12-home-mesh-map-and-performance)
+  - [12. Home, Network and Performance](#12-home-network-and-performance)
   - [13. Siri, Shortcuts, widgets and Handoff](#13-siri-shortcuts-widgets-and-handoff)
   - [14. Settings](#14-settings)
   - [15. On the Mac](#15-on-the-mac)
@@ -75,8 +75,8 @@
 |---|---|
 | ![Session window on Mac](screenshots/mac-session-en.jpg) | ![Servers](screenshots/mac-servers-en.jpg) |
 | A session in its own window | Servers by group, favourites and nearby computers |
-| ![Mesh Map](screenshots/mac-mesh-en.jpg) | ![Performance](screenshots/mac-performance-en.jpg) |
-| Mesh Map: which computers are online, active and encrypted | Performance: frame rate, data flow, latency |
+| ![Network](screenshots/mac-network-en.jpg) | ![Performance](screenshots/mac-performance-en.jpg) |
+| Network: which computers are online, active and encrypted | Performance: frame rate, data flow, latency |
 | ![iPad home](screenshots/ipad-connect-en.jpg) | ![iPad session](screenshots/ipad-session-en.jpg) |
 | iPad: home with live previews | iPad: session with the Macro Bar |
 | ![iPad servers](screenshots/ipad-servers-en.jpg) | ![Settings](screenshots/mac-settings-en.jpg) |
@@ -87,7 +87,7 @@
   &nbsp;
   <img src="screenshots/iphone-session-en.jpg" width="200" alt="iPhone session">
   &nbsp;
-  <img src="screenshots/iphone-mesh-en.jpg" width="200" alt="iPhone Mesh Map">
+  <img src="screenshots/iphone-network-en.jpg" width="200" alt="iPhone Network">
 </p>
 <p align="center">
   <img src="screenshots/iphone-session-landscape-en.jpg" width="620" alt="iPhone in landscape">
@@ -230,11 +230,11 @@ ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the loc
 
 **Nearby** in Servers lists the computers on your network that announce Screen Sharing or VNC (Bonjour).
 
-### 12. Home, Mesh Map and Performance
+### 12. Home, Network and Performance
 
 - **Connect** (home): a card for each server with a preview of its screen, its status and, while connected, the
   bandwidth.
-- **Mesh Map**: your device in the middle and your computers around it, coloured by status, with a lock on the
+- **Network**: your device in the middle and your computers around it, coloured by status, with a lock on the
   encrypted sessions.
 - **Performance**: for each open session, frame rate, data flow, screen updates, latency and GPU time.
 
