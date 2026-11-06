@@ -42,12 +42,13 @@
   - [8. Profiles and resolution](#8-profiles-and-resolution)
   - [9. Encrypted connections: SSH tunnel](#9-encrypted-connections-ssh-tunnel)
   - [10. Away from home, without opening ports](#10-away-from-home-without-opening-ports)
-  - [11. Sync between iPhone, iPad and Mac](#11-sync-between-iphone-ipad-and-mac)
-  - [12. Wake-on-LAN and nearby computers](#12-wake-on-lan-and-nearby-computers)
-  - [13. Home, Network and Performance](#13-home-network-and-performance)
-  - [14. Siri, Shortcuts, widgets and Handoff](#14-siri-shortcuts-widgets-and-handoff)
-  - [15. Settings](#15-settings)
-  - [16. On the Mac](#16-on-the-mac)
+  - [11. Transfer files](#11-transfer-files)
+  - [12. Sync between iPhone, iPad and Mac](#12-sync-between-iphone-ipad-and-mac)
+  - [13. Wake-on-LAN and nearby computers](#13-wake-on-lan-and-nearby-computers)
+  - [14. Home, Network and Performance](#14-home-network-and-performance)
+  - [15. Siri, Shortcuts, widgets and Handoff](#15-siri-shortcuts-widgets-and-handoff)
+  - [16. Settings](#16-settings)
+  - [17. On the Mac](#17-on-the-mac)
   - [Keyboard shortcuts](#keyboard-shortcuts)
 - [Security and privacy](#security-and-privacy)
 - [Troubleshooting](#troubleshooting)
@@ -67,6 +68,8 @@
 - **Zoom and landscape**: pinch to zoom up to 8×, iPhone in portrait or landscape, a session bar you can fold away.
 - **Away from home without opening ports**: through an always-on computer at home (the SSH gateway), chosen
   automatically when you are out. Tailscale and other VPNs work too.
+- **Drag and drop files**: drop a file on the session window to copy it to the remote computer, share photos and
+  documents from any iPhone or iPad app, browse the remote computer and download its files. Over SSH, encrypted.
 - **Encrypted when you need it**: built-in SSH tunnel; a lock shows at a glance whether the session is encrypted.
 - **Live previews**: the home shows each computer's screen, online status and bandwidth.
 - **iCloud sync**: your servers and their passwords on all your iPhone, iPad and Mac, with no account to create.
@@ -251,20 +254,44 @@ gateway, and the lock in the session bar tells you which way you went.
 Already using **Tailscale**, ZeroTier or another VPN? You don't need a gateway: use the computer's VPN address as
 the host.
 
-### 11. Sync between iPhone, iPad and Mac
+### 11. Transfer files
+
+VNC carries only the screen, mouse and keyboard: there is no channel for files. Tethera adds one with **SFTP over
+SSH**, encrypted, so the remote computer needs SSH turned on:
+
+- **Mac**: System Settings → General → Sharing → **Remote Login**.
+- **Windows**: Settings → System → Optional features → **OpenSSH Server**.
+- **Linux and Raspberry Pi**: the `openssh-server` package, usually already there.
+
+Then turn on **Use SSH Tunnel** for the server in Tethera. The same connection also encrypts screen and keyboard,
+and away from home it goes through your gateway.
+
+| Where | How |
+|---|---|
+| Mac and iPad | **Drag files onto the session window**: they are copied to the remote computer |
+| iPhone and iPad | **Share → Tethera** in Photos, Files, Mail, Safari or any app, then choose the computer |
+| Mac | **Open With → Tethera** in the Finder |
+| Everywhere | The **folder** button in the session: browse the remote computer, upload and download |
+
+Tethera sees only the picture of the remote screen, so it can't tell which folder is under the pointer: files go
+to the remote **Desktop**, or to any folder you pick with **Use This Folder** in the Files panel (remembered for each
+computer). A file with the same name is never overwritten: it becomes "name 2". Downloads go to the Downloads folder
+on the Mac; on iPhone and iPad you choose where to save them.
+
+### 12. Sync between iPhone, iPad and Mac
 
 Tethera uses **your own iCloud**: there is no account to create. Sign in with the same Apple Account on every
 device and the servers you add appear everywhere within seconds, with their passwords (through the iCloud
 Keychain). **Settings → iCloud** shows whether you are signed in and when the last sync happened.
 
-### 12. Wake-on-LAN and nearby computers
+### 13. Wake-on-LAN and nearby computers
 
 Add the computer's **MAC Address** in the server editor: when it is asleep, **Wake** (touch and hold the server, or
 ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the local network.
 
 **Nearby** in Servers lists the computers on your network that announce Screen Sharing or VNC (Bonjour).
 
-### 13. Home, Network and Performance
+### 14. Home, Network and Performance
 
 - **Connect** (home): a card for each server with a preview of its screen, its status and, while connected, the
   bandwidth.
@@ -272,7 +299,7 @@ ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the loc
   encrypted sessions.
 - **Performance**: for each open session, frame rate, data flow, screen updates, latency and GPU time.
 
-### 14. Siri, Shortcuts, widgets and Handoff
+### 15. Siri, Shortcuts, widgets and Handoff
 
 - **Siri**: "Connect to Studio with Tethera", "Open Studio in Tethera", "Wake Studio with Tethera".
 - **Shortcuts and Spotlight**: a Connect and a Wake action for each server; type a server's name in Spotlight.
@@ -282,7 +309,7 @@ ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the loc
 - **Handoff**: the session open on one device is offered on the others (Dock on Mac and iPad, app switcher on iPhone).
 - **Focus**: a Focus filter shows only one group of servers, for example Work.
 
-### 15. Settings
+### 16. Settings
 
 - **Input**: Direct Touch or Trackpad, Macro Bar on or off.
 - **iCloud**: account status and last sync.
@@ -293,7 +320,7 @@ ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the loc
   Italiano, Français, Deutsch or Español. It applies the next time Tethera opens; on Mac you can restart it right away.
 - **Guide**: every feature explained step by step, also from the Help menu on Mac (⌘?).
 
-### 16. On the Mac
+### 17. On the Mac
 
 - Each session opens in its **own window**: put computers on different displays or Spaces.
 - The **menu bar** icon lists your active sessions and servers; Tethera can **launch at login** (Settings → General).

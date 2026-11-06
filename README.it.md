@@ -42,12 +42,13 @@
   - [8. Profili e risoluzione](#8-profili-e-risoluzione)
   - [9. Connessioni cifrate: tunnel SSH](#9-connessioni-cifrate-tunnel-ssh)
   - [10. Fuori casa, senza aprire porte](#10-fuori-casa-senza-aprire-porte)
-  - [11. Sincronizzazione tra iPhone, iPad e Mac](#11-sincronizzazione-tra-iphone-ipad-e-mac)
-  - [12. Wake-on-LAN e computer nelle vicinanze](#12-wake-on-lan-e-computer-nelle-vicinanze)
-  - [13. Home, Rete e Performance](#13-home-rete-e-performance)
-  - [14. Siri, Comandi Rapidi, widget e Handoff](#14-siri-comandi-rapidi-widget-e-handoff)
-  - [15. Impostazioni](#15-impostazioni)
-  - [16. Sul Mac](#16-sul-mac)
+  - [11. Trasferire file](#11-trasferire-file)
+  - [12. Sincronizzazione tra iPhone, iPad e Mac](#12-sincronizzazione-tra-iphone-ipad-e-mac)
+  - [13. Wake-on-LAN e computer nelle vicinanze](#13-wake-on-lan-e-computer-nelle-vicinanze)
+  - [14. Home, Rete e Performance](#14-home-rete-e-performance)
+  - [15. Siri, Comandi Rapidi, widget e Handoff](#15-siri-comandi-rapidi-widget-e-handoff)
+  - [16. Impostazioni](#16-impostazioni)
+  - [17. Sul Mac](#17-sul-mac)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -68,6 +69,9 @@
   sessione richiudibile.
 - **Fuori casa senza aprire porte**: attraverso un computer di casa sempre acceso (il gateway SSH), scelto da solo
   quando sei fuori. Funzionano anche Tailscale e le altre VPN.
+- **File con il trascinamento**: trascina un file sulla finestra della sessione per copiarlo sul computer remoto,
+  condividi foto e documenti da qualsiasi app di iPhone e iPad, sfoglia il computer remoto e scaricane i file. Via SSH,
+  cifrato.
 - **Cifrato quando serve**: tunnel SSH integrato; un lucchetto mostra subito se la sessione è cifrata.
 - **Anteprime dal vivo**: la home mostra lo schermo di ogni computer, lo stato online e la banda.
 - **Sincronizzazione iCloud**: i tuoi server e le loro password su tutti i tuoi iPhone, iPad e Mac, senza account da creare.
@@ -253,21 +257,45 @@ nella barra della sessione ti dice da che strada sei passato.
 
 Usi già **Tailscale**, ZeroTier o un'altra VPN? Il gateway non serve: usa come host l'indirizzo VPN del computer.
 
-### 11. Sincronizzazione tra iPhone, iPad e Mac
+### 11. Trasferire file
+
+Il VNC trasporta solo schermo, mouse e tastiera: non ha un canale per i file. Tethera ne aggiunge uno con **SFTP via
+SSH**, cifrato, quindi il computer remoto deve avere SSH attivo:
+
+- **Mac**: Impostazioni di Sistema → Generali → Condivisione → **Login remoto**.
+- **Windows**: Impostazioni → Sistema → Funzionalità facoltative → **Server OpenSSH**.
+- **Linux e Raspberry Pi**: il pacchetto `openssh-server`, di solito già presente.
+
+Poi in Tethera attiva **Usa tunnel SSH** per quel server. La stessa connessione cifra anche schermo e tastiera, e
+fuori casa passa dal tuo gateway.
+
+| Dove | Come |
+|---|---|
+| Mac e iPad | **Trascina i file sulla finestra della sessione**: vengono copiati sul computer remoto |
+| iPhone e iPad | **Condividi → Tethera** in Foto, File, Mail, Safari o qualsiasi app, poi scegli il computer |
+| Mac | **Apri con → Tethera** nel Finder |
+| Ovunque | Il pulsante **cartella** nella sessione: sfoglia il computer remoto, invia e scarica |
+
+Tethera vede solo l'immagine dello schermo remoto, quindi non può sapere quale cartella c'è sotto il puntatore: i
+file vanno sulla **Scrivania** del computer remoto, oppure nella cartella che scegli con **Usa questa cartella** nel
+pannello File (ricordata per ogni computer). Un file con lo stesso nome non viene mai sovrascritto: diventa "nome 2".
+Sul Mac i file scaricati vanno nella cartella Download; su iPhone e iPad scegli tu dove salvarli.
+
+### 12. Sincronizzazione tra iPhone, iPad e Mac
 
 Tethera usa **il tuo iCloud**: non c'è nessun account da creare. Accedi con lo stesso Apple Account su ogni
 dispositivo e i server che aggiungi compaiono ovunque in pochi secondi, con le loro password (tramite il
 Portachiavi iCloud). **Impostazioni → iCloud** mostra se hai effettuato l'accesso e quando è avvenuta l'ultima
 sincronizzazione.
 
-### 12. Wake-on-LAN e computer nelle vicinanze
+### 13. Wake-on-LAN e computer nelle vicinanze
 
 Aggiungi il **MAC Address** del computer nell'editor del server: quando è in stop, **Wake** (tieni premuto sul
 server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveglio. Funziona nella rete locale.
 
 **Nearby** in Servers elenca i computer della tua rete che annunciano la Condivisione schermo o il VNC (Bonjour).
 
-### 13. Home, Rete e Performance
+### 14. Home, Rete e Performance
 
 - **Connect** (home): una card per ogni server con l'anteprima del suo schermo, lo stato e, durante la
   connessione, la banda.
@@ -276,7 +304,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 - **Performance**: per ogni sessione aperta, fotogrammi al secondo, flusso dati, aggiornamenti dello schermo,
   latenza e tempo della GPU.
 
-### 14. Siri, Comandi Rapidi, widget e Handoff
+### 15. Siri, Comandi Rapidi, widget e Handoff
 
 - **Siri**: "Connect to Studio with Tethera", "Open Studio in Tethera", "Wake Studio with Tethera".
 - **Comandi Rapidi e Spotlight**: un'azione Connect e una Wake per ogni server; scrivi il nome di un server in Spotlight.
@@ -286,7 +314,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 - **Handoff**: la sessione aperta su un dispositivo è proposta sugli altri (Dock su Mac e iPad, selettore delle app su iPhone).
 - **Focus**: un filtro Focus mostra un solo gruppo di server, per esempio Lavoro.
 
-### 15. Impostazioni
+### 16. Impostazioni
 
 - **Input**: Direct Touch o Trackpad, Macro Bar attiva o no.
 - **iCloud**: stato dell'account e ultima sincronizzazione.
@@ -297,7 +325,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
   Italiano, English, Français, Deutsch o Español. Vale dalla prossima apertura; sul Mac puoi riavviare subito.
 - **Guida**: ogni funzione spiegata passo per passo, anche dal menu Aiuto sul Mac (⌘?).
 
-### 16. Sul Mac
+### 17. Sul Mac
 
 - Ogni sessione si apre nella **sua finestra**: metti i computer su monitor o Spazi diversi.
 - L'icona nella **barra dei menu** elenca le sessioni attive e i server; Tethera può **aprirsi al login**
