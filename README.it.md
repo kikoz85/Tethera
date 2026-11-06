@@ -6,7 +6,7 @@
 
 <p align="center">
   <b>Desktop remoto VNC nativo per iPhone, iPad e Mac.</b><br>
-  Veloce, leggero e riservato: controlla i tuoi Mac, Linux e Windows da ogni angolo di casa o dell'ufficio.
+  Veloce, leggero e riservato: controlla i tuoi Mac, Linux e Windows a casa, in ufficio o da ovunque.
 </p>
 
 <p align="center">
@@ -41,12 +41,13 @@
   - [7. Zoom, orientamento e barra della sessione](#7-zoom-orientamento-e-barra-della-sessione)
   - [8. Profili e risoluzione](#8-profili-e-risoluzione)
   - [9. Connessioni cifrate: tunnel SSH](#9-connessioni-cifrate-tunnel-ssh)
-  - [10. Sincronizzazione tra iPhone, iPad e Mac](#10-sincronizzazione-tra-iphone-ipad-e-mac)
-  - [11. Wake-on-LAN e computer nelle vicinanze](#11-wake-on-lan-e-computer-nelle-vicinanze)
-  - [12. Home, Rete e Performance](#12-home-rete-e-performance)
-  - [13. Siri, Comandi Rapidi, widget e Handoff](#13-siri-comandi-rapidi-widget-e-handoff)
-  - [14. Impostazioni](#14-impostazioni)
-  - [15. Sul Mac](#15-sul-mac)
+  - [10. Fuori casa, senza aprire porte](#10-fuori-casa-senza-aprire-porte)
+  - [11. Sincronizzazione tra iPhone, iPad e Mac](#11-sincronizzazione-tra-iphone-ipad-e-mac)
+  - [12. Wake-on-LAN e computer nelle vicinanze](#12-wake-on-lan-e-computer-nelle-vicinanze)
+  - [13. Home, Rete e Performance](#13-home-rete-e-performance)
+  - [14. Siri, Comandi Rapidi, widget e Handoff](#14-siri-comandi-rapidi-widget-e-handoff)
+  - [15. Impostazioni](#15-impostazioni)
+  - [16. Sul Mac](#16-sul-mac)
   - [Scorciatoie da tastiera](#scorciatoie-da-tastiera)
 - [Sicurezza e privacy](#sicurezza-e-privacy)
 - [Risoluzione dei problemi](#risoluzione-dei-problemi)
@@ -58,13 +59,15 @@
   wayvnc su Linux, TightVNC, UltraVNC e RealVNC su Windows, Raspberry Pi.
 - **Fluido e nitido**: disegno con la GPU (Metal), encoding moderni compressi, video H.264 in hardware con wayvnc.
 - **Il dito è un mouse**: tocco, doppio tocco, tocca e trascina per selezionare, due dita per il clic destro e lo
-  scorrimento, tre dita per il clic centrale; oppure la modalità trackpad come su un portatile. Anche Apple Pencil,
-  mouse e trackpad.
+  scorrimento, tre dita per il clic centrale; oppure la modalità trackpad come su un portatile, con accelerazione.
+  Su iPad mouse e trackpad funzionano come su un computer e la Apple Pencil disegna e seleziona con precisione.
 - **Copia e incolla che funziona e basta**: ⌘C e ⌘V copiano e incollano sul computer remoto, e il testo passa tra
   lui e il tuo iPhone, iPad o Mac nei due sensi.
 - **Macro Bar**: Esc, Tab, Ctrl, Alt, ⌘, frecce, tasti F e Ctrl+Alt+Canc sempre a portata, sopra la tastiera.
 - **Zoom e orizzontale**: pizzica per ingrandire fino a 8×, iPhone in verticale o in orizzontale, barra della
   sessione richiudibile.
+- **Fuori casa senza aprire porte**: attraverso un computer di casa sempre acceso (il gateway SSH), scelto da solo
+  quando sei fuori. Funzionano anche Tailscale e le altre VPN.
 - **Cifrato quando serve**: tunnel SSH integrato; un lucchetto mostra subito se la sessione è cifrata.
 - **Anteprime dal vivo**: la home mostra lo schermo di ogni computer, lo stato online e la banda.
 - **Sincronizzazione iCloud**: i tuoi server e le loro password su tutti i tuoi iPhone, iPad e Mac, senza account da creare.
@@ -167,8 +170,18 @@ In modalità **Direct Touch** il puntatore va dove tocchi:
 | Pizzico | Zoom |
 
 La modalità **Trackpad** (il pulsante con la mano nella barra della sessione, o Impostazioni → Touch Input) funziona
-come il trackpad di un portatile: il dito sposta il puntatore da dove si trova, il tocco fa clic lì. Mouse o trackpad
-fisici su iPad puntano sempre direttamente, con hover, clic destro e scorrimento.
+come il trackpad di un portatile: il dito sposta il puntatore da dove si trova, il tocco fa clic lì. Scorri piano per
+la precisione, veloce per attraversare lo schermo; con lo zoom la vista segue il puntatore.
+
+**Mouse, trackpad e Apple Pencil su iPad** funzionano come su un computer:
+
+| Su iPad | Sul computer remoto |
+|---|---|
+| Tasti del mouse o del trackpad | Premuti e rilasciati insieme ai tuoi: tieni premuto, trascina, clic destro, clic centrale |
+| Due dita sul trackpad, rotella | Scorrimento |
+| Apple Pencil sullo schermo | Tasto sinistro premuto: disegna, seleziona, trascina |
+| Apple Pencil sopra lo schermo (iPad con hover) | Sposta il puntatore |
+| Doppio tocco o pressione sulla Apple Pencil | Clic destro |
 
 ### 5. Tastiera e Macro Bar
 
@@ -221,21 +234,40 @@ Il VNC semplice protegge solo la password, non lo schermo e i tasti. Nelle reti 
 Il VNC si collega poi alla porta indicata **sul server SSH stesso** (localhost), così il server VNC può restare
 chiuso alla rete.
 
-### 10. Sincronizzazione tra iPhone, iPad e Mac
+### 10. Fuori casa, senza aprire porte
+
+Per raggiungere i tuoi computer quando non sei a casa non serve aprire porte sul router né esporre il VNC su
+internet. Serve un **computer di casa sempre acceso che accetti SSH** da internet, come un server Linux, un NAS o un
+Raspberry Pi: il **gateway**.
+
+1. Sul gateway aggiungi la chiave pubblica di Tethera a `~/.ssh/authorized_keys` (Impostazioni → **Chiave SSH** →
+   **Copia chiave pubblica**), oppure usa la password del gateway.
+2. Nell'editor del server, in **Fuori casa**, scegli **Automatica** e inserisci l'indirizzo internet del gateway
+   (ad esempio un nome DNS dinamico), **Porta del gateway** e **Nome utente del gateway**. L'**Host** resta
+   l'indirizzo del computer a casa, ad esempio `192.168.1.20`.
+3. Per gli altri computer di casa scegli **Usa il gateway di**: lo stesso gateway, senza riscriverlo.
+
+**Automatica** si collega direttamente quando il computer risponde (sei a casa) e attraverso il gateway quando non
+risponde; **Sempre** usa ogni volta il gateway. Fuori casa la connessione è cifrata fino al gateway, e il lucchetto
+nella barra della sessione ti dice da che strada sei passato.
+
+Usi già **Tailscale**, ZeroTier o un'altra VPN? Il gateway non serve: usa come host l'indirizzo VPN del computer.
+
+### 11. Sincronizzazione tra iPhone, iPad e Mac
 
 Tethera usa **il tuo iCloud**: non c'è nessun account da creare. Accedi con lo stesso Apple Account su ogni
 dispositivo e i server che aggiungi compaiono ovunque in pochi secondi, con le loro password (tramite il
 Portachiavi iCloud). **Impostazioni → iCloud** mostra se hai effettuato l'accesso e quando è avvenuta l'ultima
 sincronizzazione.
 
-### 11. Wake-on-LAN e computer nelle vicinanze
+### 12. Wake-on-LAN e computer nelle vicinanze
 
 Aggiungi il **MAC Address** del computer nell'editor del server: quando è in stop, **Wake** (tieni premuto sul
 server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveglio. Funziona nella rete locale.
 
 **Nearby** in Servers elenca i computer della tua rete che annunciano la Condivisione schermo o il VNC (Bonjour).
 
-### 12. Home, Rete e Performance
+### 13. Home, Rete e Performance
 
 - **Connect** (home): una card per ogni server con l'anteprima del suo schermo, lo stato e, durante la
   connessione, la banda.
@@ -244,7 +276,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 - **Performance**: per ogni sessione aperta, fotogrammi al secondo, flusso dati, aggiornamenti dello schermo,
   latenza e tempo della GPU.
 
-### 13. Siri, Comandi Rapidi, widget e Handoff
+### 14. Siri, Comandi Rapidi, widget e Handoff
 
 - **Siri**: "Connect to Studio with Tethera", "Open Studio in Tethera", "Wake Studio with Tethera".
 - **Comandi Rapidi e Spotlight**: un'azione Connect e una Wake per ogni server; scrivi il nome di un server in Spotlight.
@@ -254,7 +286,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 - **Handoff**: la sessione aperta su un dispositivo è proposta sugli altri (Dock su Mac e iPad, selettore delle app su iPhone).
 - **Focus**: un filtro Focus mostra un solo gruppo di server, per esempio Lavoro.
 
-### 14. Impostazioni
+### 15. Impostazioni
 
 - **Input**: Direct Touch o Trackpad, Macro Bar attiva o no.
 - **iCloud**: stato dell'account e ultima sincronizzazione.
@@ -265,7 +297,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
   Italiano, English, Français, Deutsch o Español. Vale dalla prossima apertura; sul Mac puoi riavviare subito.
 - **Guida**: ogni funzione spiegata passo per passo, anche dal menu Aiuto sul Mac (⌘?).
 
-### 15. Sul Mac
+### 16. Sul Mac
 
 - Ogni sessione si apre nella **sua finestra**: metti i computer su monitor o Spazi diversi.
 - L'icona nella **barra dei menu** elenca le sessioni attive e i server; Tethera può **aprirsi al login**
