@@ -21,6 +21,11 @@
 
 ![Tethera on Mac: home with live previews of your computers](screenshots/mac-connect-en.jpg)
 
+<p align="center">
+  <a href="video/tethera-mac-en.mp4"><img src="video/tethera-mac-en.jpg" width="720" alt="Tethera on Mac video (40 seconds)"></a><br>
+  ▶︎ <a href="video/tethera-mac-en.mp4">Watch the video (40 s)</a>
+</p>
+
 ## Contents
 
 - [Features](#features)
@@ -64,6 +69,7 @@
 - **Wake-on-LAN**, nearby computers found automatically, `vnc://` links.
 - **Siri, Shortcuts, Spotlight, widgets, Control Center, Live Activity, Handoff and Focus filters.**
 - **Light**: about 100 MB of memory and no CPU while the remote screen is still.
+- **5 languages**: English, Italiano, Français, Deutsch, Español, with a built-in guide.
 
 | | |
 |---|---|
@@ -249,6 +255,9 @@ ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the loc
 - **Security**: **Require Face ID** (or Touch ID) locks Tethera when it goes to the background.
 - **SSH Key**: generate, import, share or remove the key used by SSH tunnels.
 - **Appearance**: Dark Cyan or Amaranth theme, also in the widgets.
+- **Language**: *Automatic* follows your system language (English if yours isn't available), or choose English,
+  Italiano, Français, Deutsch or Español. It applies the next time Tethera opens; on Mac you can restart it right away.
+- **Guide**: every feature explained step by step, also from the Help menu on Mac (⌘?).
 
 ### 15. On the Mac
 
@@ -269,6 +278,7 @@ ask Siri "Wake Studio with Tethera") sends the magic packet. It works on the loc
 | ⌘+ ⌘- ⌘0 | Zoom in, zoom out, actual size |
 | ⇧⌘N | New server |
 | ⌘, | Settings (Mac) |
+| ⌘? | Tethera Guide (Mac) |
 
 ## Security and privacy
 

@@ -19,7 +19,12 @@
   <a href="https://github.com/sponsors/kikoz85"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white" alt="Sostieni Tethera su GitHub"></a>
 </p>
 
-![Tethera su Mac: home con le anteprime dal vivo dei tuoi computer](screenshots/mac-connect-en.jpg)
+![Tethera su Mac: home con le anteprime dal vivo dei tuoi computer](screenshots/mac-connect-it.jpg)
+
+<p align="center">
+  <a href="video/tethera-mac-it.mp4"><img src="video/tethera-mac-it.jpg" width="720" alt="Video di Tethera su Mac (40 secondi)"></a><br>
+  ▶︎ <a href="video/tethera-mac-it.mp4">Guarda il video (40 s)</a>
+</p>
 
 ## Indice
 
@@ -66,30 +71,31 @@
 - **Wake-on-LAN**, computer nelle vicinanze trovati da soli, link `vnc://`.
 - **Siri, Comandi Rapidi, Spotlight, widget, Centro di Controllo, Live Activity, Handoff e filtri Focus.**
 - **Leggero**: circa 100 MB di memoria e nessun uso della CPU quando lo schermo remoto è fermo.
+- **5 lingue**: italiano, English, Français, Deutsch, Español, con una guida integrata.
 
 | | |
 |---|---|
-| ![Finestra della sessione su Mac](screenshots/mac-session-en.jpg) | ![Server](screenshots/mac-servers-en.jpg) |
+| ![Finestra della sessione su Mac](screenshots/mac-session-it.jpg) | ![Server](screenshots/mac-servers-it.jpg) |
 | Una sessione nella sua finestra | Server per gruppo, preferiti e computer nelle vicinanze |
-| ![Mesh Map](screenshots/mac-mesh-en.jpg) | ![Performance](screenshots/mac-performance-en.jpg) |
+| ![Mesh Map](screenshots/mac-mesh-it.jpg) | ![Performance](screenshots/mac-performance-it.jpg) |
 | Mesh Map: quali computer sono online, attivi e cifrati | Performance: fotogrammi, flusso dati, latenza |
 | ![Home su iPad](screenshots/ipad-connect-en.jpg) | ![Sessione su iPad](screenshots/ipad-session-en.jpg) |
 | iPad: home con le anteprime dal vivo | iPad: sessione con la Macro Bar |
-| ![Server su iPad](screenshots/ipad-servers-en.jpg) | ![Impostazioni](screenshots/mac-settings-en.jpg) |
+| ![Server su iPad](screenshots/ipad-servers-en.jpg) | ![Impostazioni](screenshots/mac-settings-it.jpg) |
 | iPad: server | Impostazioni |
 
 <p align="center">
-  <img src="screenshots/iphone-connect-en.jpg" width="200" alt="Home su iPhone">
+  <img src="screenshots/iphone-connect-it.jpg" width="200" alt="Home su iPhone">
   &nbsp;
-  <img src="screenshots/iphone-session-en.jpg" width="200" alt="Sessione su iPhone">
+  <img src="screenshots/iphone-session-it.jpg" width="200" alt="Sessione su iPhone">
   &nbsp;
-  <img src="screenshots/iphone-mesh-en.jpg" width="200" alt="Mesh Map su iPhone">
+  <img src="screenshots/iphone-mesh-it.jpg" width="200" alt="Mesh Map su iPhone">
 </p>
 <p align="center">
-  <img src="screenshots/iphone-session-landscape-en.jpg" width="620" alt="iPhone in orizzontale">
+  <img src="screenshots/iphone-session-landscape-it.jpg" width="620" alt="iPhone in orizzontale">
 </p>
 
-L'interfaccia dell'app per ora è in inglese.
+Le immagini dell'iPad sono in inglese.
 
 ## Requisiti di sistema
 
@@ -254,7 +260,10 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 - **iCloud**: stato dell'account e ultima sincronizzazione.
 - **Security**: **Require Face ID** (o Touch ID) blocca Tethera quando va in background.
 - **SSH Key**: genera, importa, condividi o rimuovi la chiave usata dai tunnel SSH.
-- **Appearance**: tema Dark Cyan o Amaranth, anche nei widget.
+- **Aspetto**: tema Ciano scuro o Amaranto, anche nei widget.
+- **Lingua**: *Automatica* segue la lingua del sistema (inglese se la tua non è disponibile), oppure scegli
+  Italiano, English, Français, Deutsch o Español. Vale dalla prossima apertura; sul Mac puoi riavviare subito.
+- **Guida**: ogni funzione spiegata passo per passo, anche dal menu Aiuto sul Mac (⌘?).
 
 ### 15. Sul Mac
 
@@ -276,6 +285,7 @@ server, o chiedi a Siri "Wake Studio with Tethera") invia il pacchetto di risveg
 | ⌘+ ⌘- ⌘0 | Ingrandisci, riduci, dimensione reale |
 | ⇧⌘N | Nuovo server |
 | ⌘, | Impostazioni (Mac) |
+| ⌘? | Guida di Tethera (Mac) |
 
 ## Sicurezza e privacy
 
