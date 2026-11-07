@@ -123,6 +123,18 @@ Tethera arriverà sull'App Store per iPhone, iPad e Mac. La **versione per Mac**
 [Releases](https://github.com/kikoz85/Tethera/releases) di questo repository, dove ogni nuova versione è pubblicata
 con le sue note. L'app per Mac si aggiorna da sola quando esce una nuova versione.
 
+Le **versioni per Windows e Linux** sono nella stessa pagina, con la stessa impostazione e le stesse funzioni
+dell'app per Mac:
+
+| Sistema | Pacchetto |
+|---|---|
+| Windows 10 / 11, x64 e arm64 | installer `.msi` |
+| Debian, Ubuntu e derivate, x86_64 e arm64 | `.deb` |
+| Fedora, RHEL, openSUSE, x86_64 e arm64 | `.rpm` |
+
+Su Linux il video (H.264) usa OpenH264 se è installato (pacchetto `openh264`); senza, Tethera usa le altre
+codifiche. I pacchetti per Windows e Linux non sono ancora firmati: SmartScreen può chiedere conferma.
+
 ## Guida
 
 ### 1. Preparare il computer da controllare
