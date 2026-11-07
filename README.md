@@ -119,6 +119,17 @@ Tethera is coming to the App Store for iPhone, iPad and Mac. The **Mac version**
 [Releases](https://github.com/kikoz85/Tethera/releases) page of this repository, where every new version is
 published with its release notes. The Mac app updates itself when a new version comes out.
 
+The **Windows and Linux versions** are on the same page, with the same layout and features as the Mac app:
+
+| System | Package |
+|---|---|
+| Windows 10 / 11, x64 and arm64 | `.msi` installer |
+| Debian, Ubuntu and derivatives, x86_64 and arm64 | `.deb` |
+| Fedora, RHEL, openSUSE, x86_64 and arm64 | `.rpm` |
+
+On Linux, video (H.264) uses OpenH264 when it is installed (`openh264` package); without it Tethera uses the other
+encodings. The Windows and Linux packages are not signed yet, so SmartScreen may ask for confirmation.
+
 ## User guide
 
 ### 1. Prepare the computer to control
