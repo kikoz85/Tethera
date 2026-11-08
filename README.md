@@ -131,6 +131,9 @@ The **Windows and Linux versions** are on the same page, with the same layout an
 On Linux, video (H.264) uses OpenH264 when it is installed (`openh264` package); without it Tethera uses the other
 encodings. The Windows and Linux packages are not signed yet, so SmartScreen may ask for confirmation.
 
+Tethera is free and is used under its [license agreement](LICENSE). The open-source components it contains are listed,
+with their licenses, in Settings › Acknowledgements.
+
 ## User guide
 
 ### 1. Prepare the computer to control

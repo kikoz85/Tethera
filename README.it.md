@@ -131,9 +131,13 @@ dell'app per Mac:
 | Windows 10 / 11, x64 e arm64 | installer `.msi` |
 | Debian, Ubuntu e derivate, x86_64 e arm64 | `.deb` |
 | Fedora, RHEL, openSUSE, x86_64 e arm64 | `.rpm` |
+| Qualsiasi Linux, x86_64 e arm64, senza installare | `.AppImage` |
 
 Su Linux il video (H.264) usa OpenH264 se è installato (pacchetto `openh264`); senza, Tethera usa le altre
 codifiche. I pacchetti per Windows e Linux non sono ancora firmati: SmartScreen può chiedere conferma.
+
+Tethera è gratuita e si usa secondo la [licenza d'uso](LICENSE). I componenti open source che contiene sono elencati,
+con le loro licenze, in Impostazioni › Riconoscimenti.
 
 ## Guida
 
