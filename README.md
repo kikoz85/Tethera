@@ -126,6 +126,7 @@ The **Windows and Linux versions** are on the same page, with the same layout an
 | Windows 10 / 11, x64 and arm64 | `.msi` installer |
 | Debian, Ubuntu and derivatives, x86_64 and arm64 | `.deb` |
 | Fedora, RHEL, openSUSE, x86_64 and arm64 | `.rpm` |
+| Any Linux, x86_64 and arm64, without installing | `.AppImage` |
 
 On Linux, video (H.264) uses OpenH264 when it is installed (`openh264` package); without it Tethera uses the other
 encodings. The Windows and Linux packages are not signed yet, so SmartScreen may ask for confirmation.
