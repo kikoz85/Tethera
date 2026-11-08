@@ -15,7 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/kikoz85/Tethera/releases/latest"><img src="https://img.shields.io/github/v/release/kikoz85/Tethera?label=scarica%20per%20Mac&color=2ED3B7" alt="Scarica"></a>
-  <a href="https://www.enricofanucchi.com?utm_source=github&utm_campaign=tethera"><img src="https://img.shields.io/badge/sito-enricofanucchi.com-F7941D" alt="Sito"></a>
+  <a href="https://www.enricofanucchi.com/it/app/tethera?utm_source=github&utm_campaign=tethera"><img src="https://img.shields.io/badge/sito-enricofanucchi.com-F7941D" alt="Sito"></a>
   <a href="https://github.com/sponsors/kikoz85"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white" alt="Sostieni Tethera su GitHub"></a>
 </p>
 
