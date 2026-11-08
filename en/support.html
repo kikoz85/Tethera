@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Support · Tethera</title>
+  <meta name="description" content="Tethera support: frequently asked questions and contact.">
+  <link rel="icon" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="../icon-192x192.png" alt="Tethera"></a>
+    <div class="brand">Tethera<small>Support</small></div>
+    <nav class="lang" aria-label="Language">
+      <a href="../support.html" lang="it">Italiano</a>
+      <a href="support.html" lang="en" aria-current="page">English</a>
+    </nav>
+  </header>
+
+  <h1>Support</h1>
+  <p class="meta">Tethera 1.2 · Mac, iPhone, iPad, Android, Windows and Linux</p>
+
+  <div class="card">
+    <p style="margin-top:0"><strong>Write to us</strong>: <a href="mailto:enricofanucchi@gmail.com?subject=Tethera%20support">enricofanucchi@gmail.com</a>. We usually reply within two business days.</p>
+    <p style="margin-bottom:0">Include the app version (at the bottom of Settings), your device and system, and the remote computer's VNC server (for example macOS Screen Sharing, TigerVNC, wayvnc, RealVNC). <strong>Never send passwords or private keys.</strong></p>
+  </div>
+
+  <h2>Getting started</h2>
+  <ol>
+    <li>Turn on screen sharing on the remote computer: on a Mac in System Settings › General › Sharing › Screen Sharing; on Linux and Windows with a VNC server.</li>
+    <li>In Tethera choose <strong>Add Server</strong> and enter the address and port (usually 5900). Nearby computers appear by themselves under Servers.</li>
+    <li>Click the server: the session opens in its own window.</li>
+  </ol>
+
+  <h2>Frequently asked questions</h2>
+  <details>
+    <summary>How do I secure the connection?</summary>
+    <p>In the server's settings turn on <strong>Use SSH Tunnel</strong>: screen and keyboard travel encrypted and the lock in the session bar turns green. The same SSH connection is used to transfer files.</p>
+  </details>
+  <details>
+    <summary>How do I connect when I'm away from home?</summary>
+    <p>With Tailscale or another VPN, use the computer's VPN address. Without a VPN, set <strong>Away from Home</strong> with an always-on SSH gateway on your network (for example a Raspberry Pi): no VNC ports need to be opened on the router.</p>
+  </details>
+  <details>
+    <summary>How do I send files to the remote computer?</summary>
+    <p>Drop files on the session window, or open <strong>Files</strong> in the session bar. The remote computer needs SSH turned on and the server needs the SSH tunnel.</p>
+  </details>
+  <details>
+    <summary>The remote computer is a Mac: how do shortcuts work?</summary>
+    <p>On Windows and Linux, Ctrl+C, Ctrl+V, Ctrl+X, Ctrl+A and Ctrl+Z become the ⌘ shortcuts on the Mac. Ctrl+V first pastes the text you copied on your computer.</p>
+  </details>
+  <details>
+    <summary>How do I wake a sleeping computer?</summary>
+    <p>Enter its MAC address in the server's settings (Wake-on-LAN section), then choose <strong>Wake</strong> from the server's menu. It works on the same local network.</p>
+  </details>
+  <details>
+    <summary>How do I delete all my data?</summary>
+    <p>Delete your servers in the app, then uninstall it. We keep no copies anywhere: see <a href="privacy.html">Privacy</a>.</p>
+  </details>
+
+  <footer><a href="privacy.html">Privacy</a> · <a href="index.html">Tethera</a> · © 2026 Enrico Fanucchi</footer>
+</main>
+</body>
+</html>

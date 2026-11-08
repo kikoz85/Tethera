@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Tethera</title>
+  <meta name="description" content="Tethera privacy policy: no data collected, everything stays on your device.">
+  <link rel="icon" href="../favicon-32x32.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="../icon-192x192.png" alt="Tethera"></a>
+    <div class="brand">Tethera<small>Privacy policy</small></div>
+    <nav class="lang" aria-label="Language">
+      <a href="../privacy.html" lang="it">Italiano</a>
+      <a href="privacy.html" lang="en" aria-current="page">English</a>
+    </nav>
+  </header>
+
+  <h1>Privacy</h1>
+  <p class="meta">Last updated: November 8, 2026 · applies to every version of Tethera (Mac, iPhone, iPad, Android, Windows, Linux)</p>
+
+  <div class="card">
+    <ul class="summary">
+      <li>Tethera does not collect, send or sell any personal data.</li>
+      <li>No account is needed. There are no ads, usage statistics or trackers.</li>
+      <li>Servers and passwords stay on your devices. We have no servers that receive them.</li>
+      <li>The app connects only to the computers (VNC and SSH servers) you set up.</li>
+    </ul>
+  </div>
+
+  <h2>Controller</h2>
+  <p>Enrico Fanucchi — contact: <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a></p>
+
+  <h2>Data kept on your device</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data</th><th>Where and how</th></tr></thead>
+      <tbody>
+        <tr><td>Server list: name, address, port, user name, group, SSH tunnel and gateway options, MAC address for Wake-on-LAN</td><td>The app's files on the device</td></tr>
+        <tr><td>Server, SSH and gateway passwords; Tethera's SSH key</td><td>Mac, iPhone and iPad: Keychain. Android: Android Keystore. Windows and Linux: a file encrypted with AES-GCM, with the key kept by the system (DPAPI on Windows, Secret Service or a file readable only by you on Linux)</td></tr>
+        <tr><td>Fingerprints of confirmed SSH servers and preferences</td><td>The app's local settings</td></tr>
+        <tr><td>Preview of each server's last screen</td><td>An image in the app's folder, shown on the server cards</td></tr>
+        <tr><td>Files downloaded with SFTP</td><td>Where you choose (on computers, the Downloads folder)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>iCloud sync (Apple only)</h2>
+  <p>On Mac, iPhone and iPad, servers sync through the private database of your iCloud account and passwords through iCloud Keychain, so you find them on all your Apple devices. We have no access to them. On the other platforms you can export and import your servers with a file (passwords are not included).</p>
+
+  <h2>Network connections</h2>
+  <ul>
+    <li>Screen, keyboard, mouse and clipboard travel directly between your device and the remote computer, never through us. With the SSH tunnel or the gateway they are encrypted.</li>
+    <li>To show whether a computer is on, the app contacts it (ping or SSH port) at most every 30 seconds while the screen is open.</li>
+    <li>To find nearby computers, the app listens for screen sharing announcements on the local network (Bonjour/mDNS). Wake-on-LAN sends a packet on the local network only when you ask.</li>
+    <li>The Mac version downloaded from the website checks for updates by reading a file on GitHub; store versions are updated by the store.</li>
+  </ul>
+
+  <h2>Clipboard</h2>
+  <p>Text copied on the remote computer arrives in your clipboard. On computers (Mac, Windows, Linux) text copied on your device is sent to the remote computer when you switch to the session window; you can turn this off in Settings. On iPhone, iPad and Android sending is manual only.</p>
+
+  <h2>Store diagnostics</h2>
+  <p>If you allow it in your system settings, Apple, Google or Microsoft may provide us with anonymous crash reports. We use them only to fix bugs. This sharing is governed by the store operator's privacy policy.</p>
+
+  <h2>If you write to us</h2>
+  <p>If you contact support by email, we use your address and message only to reply and keep them as long as needed. You can ask to access, correct or delete this data by writing to <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a>. You can also contact your data protection authority.</p>
+  <p><strong>Never send us passwords or private keys</strong>: we don't need them to help you.</p>
+
+  <h2>Deletion</h2>
+  <p>Deleting a server also deletes its passwords and preview. Uninstalling the app removes its files; on Windows and Linux the data folder (<code>%APPDATA%\Tethera</code>, <code>~/.local/share/tethera</code>) may remain and you can delete it yourself.</p>
+
+  <h2>Children</h2>
+  <p>Tethera is a tool for connecting to your own computers and is not directed at children. We collect no data from anyone, including children.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, we will update the date at the top of the page.</p>
+
+  <footer><a href="support.html">Support</a> · <a href="index.html">Tethera</a> · © 2026 Enrico Fanucchi</footer>
+</main>
+</body>
+</html>

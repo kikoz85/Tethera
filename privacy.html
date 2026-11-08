@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · Tethera</title>
+  <meta name="description" content="Informativa sulla privacy di Tethera: nessun dato raccolto, tutto resta sul tuo dispositivo.">
+  <link rel="icon" href="favicon-32x32.png">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <header>
+    <a href="index.html"><img src="icon-192x192.png" alt="Tethera"></a>
+    <div class="brand">Tethera<small>Informativa sulla privacy</small></div>
+    <nav class="lang" aria-label="Lingua">
+      <a href="privacy.html" lang="it" aria-current="page">Italiano</a>
+      <a href="en/privacy.html" lang="en">English</a>
+    </nav>
+  </header>
+
+  <h1>Privacy</h1>
+  <p class="meta">Ultimo aggiornamento: 8 novembre 2026 · vale per tutte le versioni di Tethera (Mac, iPhone, iPad, Android, Windows, Linux)</p>
+
+  <div class="card">
+    <ul class="summary">
+      <li>Tethera non raccoglie, non invia e non vende alcun dato personale.</li>
+      <li>Non serve un account. Non ci sono pubblicità, statistiche d'uso o sistemi di tracciamento.</li>
+      <li>Server e password restano sui tuoi dispositivi. Non abbiamo server che li ricevano.</li>
+      <li>L'app si collega solo ai computer (server VNC e SSH) che configuri tu.</li>
+    </ul>
+  </div>
+
+  <h2>Titolare</h2>
+  <p>Enrico Fanucchi — contatto: <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a></p>
+
+  <h2>Dati conservati sul tuo dispositivo</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Dato</th><th>Dove e come</th></tr></thead>
+      <tbody>
+        <tr><td>Elenco dei server: nome, indirizzo, porta, utente, gruppo, opzioni di tunnel SSH e gateway, indirizzo MAC per Wake-on-LAN</td><td>File dell'app sul dispositivo</td></tr>
+        <tr><td>Password dei server, di SSH e del gateway; chiave SSH di Tethera</td><td>Mac, iPhone e iPad: Portachiavi. Android: Android Keystore. Windows e Linux: file cifrato con AES-GCM, con la chiave custodita dal sistema (DPAPI su Windows, Secret Service o un file leggibile solo da te su Linux)</td></tr>
+        <tr><td>Impronte dei server SSH confermati e preferenze</td><td>Impostazioni locali dell'app</td></tr>
+        <tr><td>Anteprima dell'ultimo schermo di ogni server</td><td>Immagine nella cartella dell'app, mostrata nelle schede dei server</td></tr>
+        <tr><td>File scaricati con SFTP</td><td>Dove scegli tu (sul computer, nella cartella Download)</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Sincronizzazione iCloud (solo Apple)</h2>
+  <p>Su Mac, iPhone e iPad i server si sincronizzano nel database privato del tuo account iCloud e le password nel Portachiavi iCloud, così li ritrovi su tutti i tuoi dispositivi Apple. Noi non vi abbiamo alcun accesso. Sulle altre piattaforme puoi esportare e importare i server con un file (le password non sono incluse).</p>
+
+  <h2>Connessioni di rete</h2>
+  <ul>
+    <li>Schermo, tastiera, mouse e appunti viaggiano direttamente tra il tuo dispositivo e il computer remoto, senza passare da noi. Con il tunnel SSH o il gateway sono cifrati.</li>
+    <li>Per mostrarti se un computer è acceso, l'app lo contatta (ping o porta SSH) al massimo ogni 30 secondi mentre la schermata è aperta.</li>
+    <li>Per trovare i computer vicini, l'app ascolta gli annunci di condivisione schermo sulla rete locale (Bonjour/mDNS). Wake-on-LAN invia un pacchetto sulla rete locale solo quando lo chiedi tu.</li>
+    <li>La versione per Mac scaricata dal sito controlla la presenza di aggiornamenti leggendo un file su GitHub; le versioni degli store si aggiornano tramite lo store.</li>
+  </ul>
+
+  <h2>Appunti</h2>
+  <p>Il testo copiato sul computer remoto arriva nei tuoi appunti. Su computer (Mac, Windows, Linux) il testo copiato sul dispositivo viene inviato al computer remoto quando torni alla finestra della sessione; puoi disattivarlo nelle Impostazioni. Su iPhone, iPad e Android l'invio è solo manuale.</p>
+
+  <h2>Diagnostica degli store</h2>
+  <p>Se lo consenti nelle impostazioni del sistema, Apple, Google o Microsoft possono fornirci rapporti anonimi sugli arresti anomali. Li usiamo solo per correggere errori. Questa condivisione è regolata dalle informative di chi gestisce lo store.</p>
+
+  <h2>Se ci scrivi</h2>
+  <p>Se contatti il supporto via email, usiamo il tuo indirizzo e il messaggio solo per risponderti e li conserviamo per il tempo necessario. Puoi chiedere di accedere a questi dati, correggerli o cancellarli scrivendo a <a href="mailto:enricofanucchi@gmail.com">enricofanucchi@gmail.com</a>. Puoi anche rivolgerti al Garante per la protezione dei dati personali.</p>
+  <p><strong>Non inviarci mai password o chiavi private</strong>: non ci servono per aiutarti.</p>
+
+  <h2>Cancellazione</h2>
+  <p>Eliminando un server l'app ne cancella anche le password e l'anteprima. Disinstallando l'app il sistema ne elimina i file; su Windows e Linux la cartella dei dati (<code>%APPDATA%\Tethera</code>, <code>~/.local/share/tethera</code>) può restare e puoi cancellarla a mano.</p>
+
+  <h2>Minori</h2>
+  <p>Tethera è uno strumento per collegarsi ai propri computer e non è rivolta ai bambini. Non raccogliamo dati di nessuno, minori compresi.</p>
+
+  <h2>Modifiche</h2>
+  <p>Se questa informativa cambia, aggiorneremo la data in cima alla pagina.</p>
+
+  <footer><a href="support.html">Supporto</a> · <a href="index.html">Tethera</a> · © 2026 Enrico Fanucchi</footer>
+</main>
+</body>
+</html>
