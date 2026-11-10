@@ -15,6 +15,7 @@
 
 <p align="center">
   <a href="https://github.com/kikoz85/Tethera/releases/latest"><img src="https://img.shields.io/github/v/release/kikoz85/Tethera?label=download%20for%20Mac&color=2ED3B7" alt="Download"></a>
+  <a href="https://apps.microsoft.com/detail/9PCS3NJKLCD1"><img src="https://img.shields.io/badge/Microsoft%20Store-Windows-0078D4?logo=microsoft&logoColor=white" alt="Get Tethera from the Microsoft Store"></a>
   <a href="https://www.enricofanucchi.com/en/app/tethera?utm_source=github&utm_campaign=tethera"><img src="https://img.shields.io/badge/website-enricofanucchi.com-F7941D" alt="Website"></a>
   <a href="https://github.com/sponsors/kikoz85"><img src="https://img.shields.io/badge/Sponsor-%E2%9D%A4-db61a2?logo=githubsponsors&logoColor=white" alt="Sponsor Tethera on GitHub"></a>
 </p>
@@ -119,17 +120,20 @@ Tethera is coming to the App Store for iPhone, iPad and Mac. The **Mac version**
 [Releases](https://github.com/kikoz85/Tethera/releases) page of this repository, where every new version is
 published with its release notes. The Mac app updates itself when a new version comes out.
 
-The **Windows and Linux versions** are on the same page, with the same layout and features as the Mac app:
+On **Windows**, get Tethera from the [Microsoft Store](https://apps.microsoft.com/detail/9PCS3NJKLCD1): signed by Microsoft, it installs without warnings and
+updates itself. The **Windows and Linux packages** are also on the Releases page, with the same layout and features
+as the Mac app:
 
 | System | Package |
 |---|---|
-| Windows 10 / 11, x64 and arm64 | `.msi` installer |
+| Windows 10 / 11, x64 and arm64 | [Microsoft Store](https://apps.microsoft.com/detail/9PCS3NJKLCD1), or the `.msi` installer |
 | Debian, Ubuntu and derivatives, x86_64 and arm64 | `.deb` |
 | Fedora, RHEL, openSUSE, x86_64 and arm64 | `.rpm` |
 | Any Linux, x86_64 and arm64, without installing | `.AppImage` |
 
 On Linux, video (H.264) uses OpenH264 when it is installed (`openh264` package); without it Tethera uses the other
-encodings. The Windows and Linux packages are not signed yet, so SmartScreen may ask for confirmation.
+encodings. The `.msi` installers and the Linux packages are not signed yet, so SmartScreen may ask for confirmation
+(the Microsoft Store version doesn't).
 
 Tethera is free and is used under its [license agreement](LICENSE). The open-source components it contains are listed,
 with their licenses, in Settings › Acknowledgements.
